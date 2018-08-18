@@ -1,0 +1,22 @@
+\i combine.sql
+
+ALTER TABLE TICKETS
+ADD CONSTRAINT tickets_key
+FOREIGN KEY (custid)
+REFERENCES CUSTOMERS(custid);
+
+--\d TICKETS
+
+ALTER TABLE FLIGHTS
+ADD CONSTRAINT flights_key
+FOREIGN KEY (airlineid)
+REFERENCES AIRLINES(airlineid);
+
+--\d FLIGHTS
+
+ALTER TABLE TICKETS
+ADD CONSTRAINT tickets2_key
+FOREIGN KEY (airlineid, flightnum)
+REFERENCES FLIGHTS(airlineid, flightnum);
+
+--\d TICKETS
